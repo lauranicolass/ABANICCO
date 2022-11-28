@@ -2,7 +2,14 @@
 
 ![ABANICCO_LOGO](https://user-images.githubusercontent.com/49556605/201992997-359d29d3-8c88-4d22-8bba-1517db572d01.png)
 
-This is the first version of ABANICCO: an AB ANgular Illustrative Classification of COlor. The corresponding paper can be found in: [ARXIV](https://arxiv.org/abs/2211.08460)
+This is the first version of ABANICCO: an AB ANgular Illustrative Classification of COlor. The corresponding paper can be found in: [ARXIV](https://arxiv.org/abs/2211.08460). If using, please cite:
+
+>@article{nicolas2022abanicco,
+  title={ABANICCO: A New Color Space for Multi-Label Pixel Classification and Color Segmentation},
+  author={Nicol{\'a}s-S{\'a}enz, Laura and Ledezma, Agapito and Pascau, Javier and Mu{\~n}oz-Barrutia, Arrate},
+  journal={arXiv preprint arXiv:2211.08460},
+  year={2022}
+}
 
 To use it, just run examplerun.mat 
 
