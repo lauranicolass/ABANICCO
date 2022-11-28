@@ -1,4 +1,4 @@
-function [Regions_Angles,Regions_Angles1,subTables] = AnalyzeColorImage_final2(an_im, Regions_Angles,Regions_Angles1,figs)
+function [Regions_Angles,Regions_Angles1,subTables] = AnalyzeColorImage_final2(an_im, Regions_Angles,Regions_Angles1,morpho,figs)
 LAB=rgb2lab(imresize(an_im,1));
 
 %% Classify pixels according to where they lie in AB histogram
@@ -27,8 +27,8 @@ for i=1:length(Regions_Angles)
     keepupperred(indices)=1;
     blue=reshape(keepupperred,size(a));
     %%% REMOVE SMALL OBJECTS AND FILL SMALL HOLES
-    BW2 = bwareaopen(blue,10);
-    binaryImage2 = ~bwareaopen(~BW2, 20);
+    BW2 = bwareaopen(blue,morpho);
+    binaryImage2 = ~bwareaopen(~BW2, 2*morpho);
     segmented_image = bsxfun(@times, an_im, cast(binaryImage2,class(an_im)));
     %%%
     nexttile

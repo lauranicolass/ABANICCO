@@ -11,17 +11,21 @@ load(fullfile(directory,'Regions_Angles1.mat'))
 
 an_im=imread(fullfile(directory2,'totoro.jpg'));
 
-wantfigure=1;
-numberofshades=15;
+wantfigure=1; % change to 0 if uninterested in obtaining figures
+numberofshades=15; % number of colors detected per category
+morphology=10; 
+% This is the standard option to fill small holes and remove small objects of a 500x500 image.
+% Larger images will benefit from higher number. 
+% Smaller images should use a smaller option.
 
 %% This is the short version:
 
-[Results,Regions_Angles1a,subTablesa] = AnalyzeColorImage_final2_short(an_im, Regions_Angles,Regions_Angles1,numberofshades,wantfigure);
+[Results,Regions_Angles1a,subTablesa] = AnalyzeColorImage_final2_short(an_im, Regions_Angles,Regions_Angles1,numberofshades,morpho,wantfigure);
 
 
 %% This has the full shade analysis: the number of shades is limited to 8 so that they fit in the final display
 
-% [Results,Regions_Angles1a,subTablesa] = AnalyzeColorImage_final2(an_im, Regions_Angles,Regions_Angles1,wantfigure);
+% [Results,Regions_Angles1a,subTablesa] = AnalyzeColorImage_final2(an_im, Regions_Angles,Regions_Angles1,morpho,wantfigure);
 
 %% Retrieve colors:
 
