@@ -13,7 +13,7 @@ an_im=imread(fullfile(directory2,'totoro.jpg'));
 
 wantfigure=1; % change to 0 if uninterested in obtaining figures
 numberofshades=15; % number of colors detected per category
-morphology=10; 
+morpho=10; 
 % This is the standard option to fill small holes and remove small objects of a 500x500 image.
 % Larger images will benefit from higher number. 
 % Smaller images should use a smaller option.
@@ -26,6 +26,22 @@ morphology=10;
 %% This has the full shade analysis: the number of shades is limited to 8 so that they fit in the final display
 
 % [Results,Regions_Angles1a,subTablesa] = AnalyzeColorImage_final2(an_im, Regions_Angles,Regions_Angles1,morpho,wantfigure);
+
+%% Describe shades:
+
+subTablesa2=subTablesa(:,2);
+colorforshades='Blue';
+r = find(strcmp(colorforshades, subTablesa2));
+if not(isempty(r))
+    subT=subTablesa{r, 1};
+    for k=1:height(subT)
+        R=subT.R(k);
+        ANG=subT.Deg(k);
+        SHADENAME=subT.ShadeName{k};
+        LVAL=subT.Lvalues(k);
+        fprintf('Color %u in %s with %f radius, %f angle, and %f L is a mix of: %s\n',k,colorforshades,R,ANG,LVAL, SHADENAME);
+    end
+end
 
 %% Retrieve colors:
 

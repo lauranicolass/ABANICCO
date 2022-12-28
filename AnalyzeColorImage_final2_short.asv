@@ -128,14 +128,14 @@ subTables = cell(size(T_split, 1));
 %             tb0.Properties.VariableNames);
 %     end
 % end
-Names2cell = table2cell(tb0(:,8));
+Names2cell = table2cell(tb0(:,6));
 for i = 1:size(T_split, 1)
     ttsplit_length=length(T_split{i,8});
     if ttsplit_length==1
-        namesearch=T_split{i,8};
+        namesearch=T_split{i,6};
         idnamesearch=find(strcmp(Names2cell, namesearch{1, 1}));
 
-        subTables{i} = tb0(idnamesearch,1:end);
+        subTables{i} = tb0(idnamesearch,1:6);
     else
         subTables{i} = table(T_split{i, :}, 'VariableNames', ...
             tb0.Properties.VariableNames);
