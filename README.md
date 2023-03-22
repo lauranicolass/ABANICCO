@@ -2,7 +2,7 @@
 
 ![ABANICCO_LOGO](https://user-images.githubusercontent.com/49556605/201992997-359d29d3-8c88-4d22-8bba-1517db572d01.png)
 
-This is the first version of ABANICCO: an AB ANgular Illustrative Classification of COlor. The corresponding paper can be found in: [ARXIV](https://arxiv.org/abs/2211.08460)
+This is the first version of ABANICCO: an AB ANgular Illustrative Classification of COlor. The corresponding paper can be found in: [SENSORS](https://www.mdpi.com/1424-8220/23/6/3338)
 
 To use it, just run examplerun.mat 
 
