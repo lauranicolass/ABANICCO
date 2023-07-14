@@ -61,11 +61,17 @@ for i=1:length(Regions_Angles)
     im=Regions_Angles(i).ResultingRGB;
     im_mask=Regions_Angles(i).Resultingmask;
     [X_no_dither,map] = rgb2ind(im,numshades,'nodither');
-    % figure; imshow(X_no_dither,[])
-    % figure; imshow(X_no_dither,map)
+    maskper=Regions_Angles(i).Resultingmask_percentage;
+    if maskper==100
+        X_no_dither=ones(size(X_no_dither));
+    end
     xnological=logical(X_no_dither);
     totalpix=sum(xnological(:));
-    map(1,:)=[];
+    
+    if height(map)>1
+     map(1,:)=[];
+    end
+
     Regions_Angles(i).X_no_dither=X_no_dither;
     Regions_Angles(i).map=map;
 
@@ -73,7 +79,7 @@ for i=1:length(Regions_Angles)
         maski=X_no_dither==j;
         %          figure; imshow(maski)
         percent0=(sum(maski(:))/totalpix)*100;
-        %         if percent0>0.5
+        
         if percent0>5
             %             figure; imshow(maski)
             shades(j).mask=maski;
@@ -107,10 +113,14 @@ end
 
 Vectorplot=[Vectorplot].';
 
+if length(Th)<2
+tb0 = table(Th,R,Lvalues,Deg,Per,Colors,cellstr(Colors2),Names,Base,Vectorplot,'VariableNames', {'Th', 'R','Lvalues','Deg','Per','Colors','Colors2','Names','Base','Vectorplot'});
 
-% tb0 = table(Th,R,Per,Colors,Colors2,Names,Base,Vectorplot,'VariableNames', {'Th', 'R','Per','Colors','Colors2','Names','Base','Vectorplot'});
+else
+
 tb0 = table(Th,R,Lvalues,Deg,Per,Colors,Colors2,Names,Base,Vectorplot,'VariableNames', {'Th', 'R','Lvalues','Deg','Per','Colors','Colors2','Names','Base','Vectorplot'});
 
+end
 %% Organize the Shades
 tb0 = sortrows(tb0,'Colors2','ascend');
 [sortedcolor,sortIdx]=sortrows(cellstr( Colors2 ),'ascend');
