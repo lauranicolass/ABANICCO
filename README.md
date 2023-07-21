@@ -2,11 +2,11 @@
 
 ![ABANICCO_LOGO](https://user-images.githubusercontent.com/49556605/201992997-359d29d3-8c88-4d22-8bba-1517db572d01.png)
 
-This is the first version of ABANICCO: an AB ANgular Illustrative Classification of COlor. The corresponding paper can be found in [SENSORS](https://www.mdpi.com/1424-8220/23/6/3338)
-
-This version requires MATLAB2021 or higher. You can also [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=lauranicolass/ABANICCO)
+This is the first version of ABANICCO: an AB ANgular Illustrative Classification of COlor. The corresponding paper can be found in [SENSORS](https://www.mdpi.com/1424-8220/23/6/3338) 
 
 To use it, just run examplerun.mat. All instructions, examples and options are present in that file.
+
+This version requires MATLAB2021 or higher. If you don't have the right version or a MATLAB license, you can also [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=lauranicolass/ABANICCO). For this to work, click the badge to open MATLAB online, save the repository when prompted, and double click on "examplerun.m" in the left panel.
 
 
 Different applications will need different actions:
