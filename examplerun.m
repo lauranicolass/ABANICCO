@@ -1,15 +1,15 @@
 clear;clc;close all
 currentFolder = pwd;
 currletter=currentFolder(1:2);
-directory=fullfile(currentFolder,'\data');
-directory2=fullfile(currentFolder,'\example_images');
+directory=fullfile(currentFolder,'data');
+directory2=fullfile(currentFolder,'example_images');
 addpath(directory,directory2)
 load(fullfile(directory,'Regions_Angles0.mat'))
 
 load(fullfile(directory,'Regions_Angles1.mat'))
 
 
-an_im=imread(fullfile(directory2,'RBG_color_wheel.svg.png'));
+an_im=imread(fullfile(directory2,'totoro.jpg'));
 
 wantfigure=1; % change to 0 if uninterested in obtaining figures
 numberofshades=15; % number of colors detected per category
