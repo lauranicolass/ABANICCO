@@ -1,6 +1,6 @@
 # ABANICCO — MATLAB reference implementation
 
-This is the **original/reference implementation** released with the 2023 ABANICCO paper. The MATLAB files remain at the repository root to preserve the original workflow and existing links.
+This is the **original/reference implementation** released with the 2023 ABANICCO paper. All MATLAB code, region definitions, and example images are contained in the repository's `MATLAB/` folder.
 
 ## Requirements
 
@@ -22,13 +22,16 @@ The code uses functionality including `rgb2lab`, `rgb2ind`, `bwareaopen`, polar 
 
 ## Run the example
 
-From the repository root, open:
+From the repository root, change into the MATLAB folder and run the example:
 
 ```matlab
+cd MATLAB
 examplerun
 ```
 
-The example loads `example_images/totoro.jpg` by default and defines three main parameters:
+Alternatively, open `MATLAB/examplerun.m` in the MATLAB editor and run it from that folder.
+
+The example loads `MATLAB/example_images/totoro.jpg` (relative to the repository root) by default and defines three main parameters:
 
 ```matlab
 wantfigure = 1;      % set to 0 to suppress optional figures
@@ -62,7 +65,7 @@ The repository can also be opened directly in MATLAB Online:
 
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=lauranicolass/ABANICCO)
 
-After opening the repository, run `examplerun.m` from the repository root.
+After opening the repository, enter the `MATLAB/` folder and run `examplerun.m`.
 
 ## Reproducibility
 

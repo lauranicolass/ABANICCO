@@ -40,10 +40,11 @@ For an RGB image, ABANICCO:
 
 ### Option 1 — MATLAB
 
-The original MATLAB implementation remains at the repository root for backward compatibility. Open and run:
+The original/reference MATLAB implementation is contained in the `MATLAB/` folder. From the repository root:
 
-```text
-examplerun.m
+```matlab
+cd MATLAB
+examplerun
 ```
 
 It demonstrates the main analysis, shade descriptions, category retrieval, custom clusters, and boundary redefinition. See **[docs/MATLAB.md](docs/MATLAB.md)** for details.
@@ -51,6 +52,8 @@ It demonstrates the main analysis, shade descriptions, category retrieval, custo
 If you do not have a local MATLAB installation, the repository can also be opened in MATLAB Online:
 
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=lauranicolass/ABANICCO)
+
+In MATLAB Online, open the `MATLAB/` folder and run `examplerun.m`.
 
 ### Option 2 — Python
 
@@ -83,16 +86,17 @@ For analyses where exact reproduction of previously published MATLAB shade outpu
 ```text
 ABANICCO/
 ├── README.md
-├── AnalyzeColorImage_final2.m          # original MATLAB implementation
-├── AnalyzeColorImage_final2_short.m    # original configurable-shade version
-├── examplerun.m                        # original MATLAB example workflow
-├── hex2rgb.m
-├── data/                               # original MATLAB region definitions
-├── example_images/                     # shared example images
-├── docs/
-│   └── MATLAB.md                       # MATLAB guide
+├── MATLAB/                             # original/reference MATLAB implementation
+│   ├── examplerun.m                    # recommended MATLAB entry point
+│   ├── AnalyzeColorImage_final2.m
+│   ├── AnalyzeColorImage_final2_short.m
+│   ├── hex2rgb.m
+│   ├── data/                           # MATLAB region definitions
+│   └── example_images/                 # example images used by MATLAB and the Python notebook
 ├── python/                             # Python package + notebook
-└── fiji/                               # Fiji/ImageJ plugin + source
+├── fiji/                               # Fiji/ImageJ plugin + source
+└── docs/
+    └── MATLAB.md                       # MATLAB guide
 ```
 
 ## Multiplex images

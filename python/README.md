@@ -57,7 +57,7 @@ from PIL import Image
 
 from abanicco import analyze, show_segmentations, polar_description
 
-im = np.asarray(Image.open("../example_images/fish2.jpg").convert("RGB"))
+im = np.asarray(Image.open("../MATLAB/example_images/fish2.jpg").convert("RGB"))
 
 regions, shades = analyze(
     im,
@@ -135,4 +135,4 @@ Available methods include Affinity Propagation, Agglomerative Clustering, BIRCH,
 
 The Python port uses the same ABANICCO color-region definitions and shade-naming intervals as the MATLAB workflow. Representative shade extraction uses k-means rather than MATLAB's `rgb2ind`, so exact shade centroids can differ slightly from the MATLAB output.
 
-The bundled `abanicco_data.json` makes the Python package self-contained; the original MATLAB `.mat` files at the repository root are not required when using the Python package.
+The bundled `abanicco_data.json` makes the Python package self-contained; the original MATLAB `.mat` files in `MATLAB/data/` are not required when using the Python package. The example images used by the notebook are read from `MATLAB/example_images/`.

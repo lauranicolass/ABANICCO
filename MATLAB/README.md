@@ -1,25 +1,69 @@
-# ABANICCO
+# ABANICCO — MATLAB
 
-![ABANICCO_LOGO](https://user-images.githubusercontent.com/49556605/201992997-359d29d3-8c88-4d22-8bba-1517db572d01.png)
+This is the **original/reference implementation** released with the 2023 ABANICCO paper. All MATLAB code, region definitions, and example images are contained in this folder.
 
-This is the first version of ABANICCO: an AB ANgular Illustrative Classification of COlor. The corresponding paper can be found in [SENSORS](https://www.mdpi.com/1424-8220/23/6/3338) 
+## Requirements
 
-To use it, just run examplerun.mat. All instructions, examples and options are present in that file.
+- MATLAB R2021 or newer
+- Image Processing Toolbox
 
-This version requires MATLAB2021 or higher. If you don't have the right version or a MATLAB license, you can also [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=lauranicolass/ABANICCO). For this to work, click the badge to open MATLAB online, save the repository when prompted, and double click on "examplerun.m" in the left panel.
+The code uses functionality including `rgb2lab`, `rgb2ind`, `bwareaopen`, polar plots, and bubble charts.
 
+## Files
 
-Different applications will need different actions:
+| File | Purpose |
+|---|---|
+| `examplerun.m` | Recommended entry point; demonstrates the full workflow |
+| `AnalyzeColorImage_final2_short.m` | Main analysis with a user-defined number of shades per color category |
+| `AnalyzeColorImage_final2.m` | Full/original shade-analysis version |
+| `hex2rgb.m` | Utility used by the MATLAB visualization code |
+| `data/Regions_Angles0.mat` | ABANICCO color-region definitions |
+| `data/Regions_Angles1.mat` | Shade naming / interval information |
 
-## For **MULTIPLEX** images:
+## Run the example
 
-We recommend running ABANICCO on the separate channels and then comparing that with the merged image. The easiest way of doing so is a tiles image of the channels. However, the best way of doing it is individually. 
+Make this folder the MATLAB current folder and run:
 
-There is no need to pre-process the images. Increasing brightness and contrast will make visualization clearer, but will also amplify noise:
+```matlab
+examplerun
+```
 
-*Multiplex channels:*
-![m_dark](https://user-images.githubusercontent.com/49556605/204319951-b3b22901-e5cc-4432-88d6-756a2848163d.png)
+The example loads `example_images/totoro.jpg` by default and defines three main parameters:
 
-*Multiplex channels with increased brightness and contrast:*
-![m_bright](https://user-images.githubusercontent.com/49556605/204319941-00d2eec0-fdf3-4f33-89b0-1dd6f8ece99c.png)
+```matlab
+wantfigure = 1;      % set to 0 to suppress optional figures
+numberofshades = 15; % number of representative shades per category
+morpho = 10;         % minimum morphology size in pixels
+```
 
+The recommended configurable call is:
+
+```matlab
+[Results, Regions_Angles1a, subTablesa] = ...
+    AnalyzeColorImage_final2_short( ...
+        an_im, Regions_Angles, Regions_Angles1, ...
+        numberofshades, morpho, wantfigure);
+```
+
+## What `examplerun.m` demonstrates
+
+The example script shows how to:
+
+1. load the ABANICCO region definitions;
+2. analyze an RGB image;
+3. inspect the detected shades and their ABANICCO names;
+4. retrieve a particular color-category segmentation;
+5. create a custom cluster by combining categories (for example Blue + Ultramarine + Teal);
+6. redefine angular/radial boundaries to create a custom color segmentation.
+
+## MATLAB Online
+
+The repository can also be opened directly in MATLAB Online:
+
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=lauranicolass/ABANICCO)
+
+After opening the repository, enter this `MATLAB/` folder and run `examplerun.m`.
+
+## Reproducibility
+
+Use this implementation when you need the closest reproduction of the shade outputs from the original published workflow. MATLAB uses `rgb2ind` for shade quantization; the newer Python and Fiji ports use k-means, so representative shades may differ slightly even when the underlying category classification agrees.
