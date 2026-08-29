@@ -108,15 +108,15 @@ For multiplex images, it is usually more informative to run ABANICCO on the indi
 If ABANICCO is useful in your work, please cite the original paper:
 
 ```bibtex
-@article{nicolas-saenz2023abanicco,
-  title   = {ABANICCO: A New Color Space for Multi-Label Pixel Classification and Color Analysis},
-  author  = {Nicolás-Sáenz, Laura and Ledezma, Agapito and Pascau, Javier and Muñoz-Barrutia, Arrate},
-  journal = {Sensors},
-  volume  = {23},
-  number  = {6},
-  pages   = {3338},
-  year    = {2023},
-  doi     = {10.3390/s23063338}
+@article{nicolas2023abanicco,
+  title={Abanicco: A new color space for multi-label pixel classification and color analysis},
+  author={Nicol{\'a}s-S{\'a}enz, Laura and Ledezma, Agapito and Pascau, Javier and Mu{\~n}oz-Barrutia, Arrate},
+  journal={Sensors},
+  volume={23},
+  number={6},
+  pages={3338},
+  year={2023},
+  publisher={MDPI}
 }
 ```
 
