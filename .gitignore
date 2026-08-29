@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.python-version
+.venv/
+venv/
+build/
+dist/
+.ipynb_checkpoints/
+
+# Fiji / Maven
+fiji/target/
+
+# Analysis outputs
+abanicco_output/
+python/abanicco_output/
+
+# MATLAB temporary/autosave files
+*.asv
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

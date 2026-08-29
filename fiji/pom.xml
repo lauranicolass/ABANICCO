@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>abanicco</groupId>
+  <artifactId>ABANICCO_</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>ABANICCO Color Analysis</name>
+  <description>
+    FIJI/ImageJ port of ABANICCO (AB ANgular Illustrative Classification of COlor):
+    automatic color analysis and segmentation in CIELAB polar coordinates.
+    Reference: Sensors 2023, 23(6), 3338. https://www.mdpi.com/1424-8220/23/6/3338
+  </description>
+
+  <properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.imagej</groupId>
+      <artifactId>ij</artifactId>
+      <version>1.54g</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>ABANICCO-${project.version}</finalName>
+  </build>
+</project>

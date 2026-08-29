@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "abanicco"
+version = "1.0.0"
+description = "ABANICCO: automatic color classification, naming, visualization, and segmentation in the CIELAB a-b plane"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Laura Nicolás-Sáenz" },
+    { name = "Agapito Ledezma" },
+    { name = "Javier Pascau" },
+    { name = "Arrate Muñoz-Barrutia" },
+]
+dependencies = [
+    "numpy",
+    "scikit-image",
+    "scikit-learn",
+    "matplotlib",
+    "plotly",
+    "pandas",
+    "pillow",
+]
+
+[project.optional-dependencies]
+notebook = ["ipywidgets", "jupyter", "kaleido"]
+
+[project.urls]
+Homepage = "https://github.com/lauranicolass/ABANICCO"
+Paper = "https://doi.org/10.3390/s23063338"
+
+[tool.setuptools]
+packages = ["abanicco"]
+
+[tool.setuptools.package-data]
+abanicco = ["abanicco_data.json"]
