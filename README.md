@@ -1,8 +1,12 @@
 # ABANICCO
 
-![ABANICCO logo](https://user-images.githubusercontent.com/49556605/201992997-359d29d3-8c88-4d22-8bba-1517db572d01.png)
-
 **ABANICCO** (**AB AN**gular **I**llustrative **C**lassification of **CO**lor) is an automatic method for color classification, naming, visualization, and color-based image segmentation in the CIELAB *a–b* plane.
+
+***Analyze images!***
+<img width="1994" height="889" alt="image" src="https://github.com/user-attachments/assets/b9369f00-8323-4148-8a9d-c4fe5f7b5b57" />
+
+***Generate Palettes!***
+<img width="3015" height="510" alt="image" src="https://github.com/user-attachments/assets/56113ba1-9983-4aee-a7e3-671e15f2572b" />
 
 The method was introduced in:
 
